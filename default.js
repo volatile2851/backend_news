@@ -3,7 +3,7 @@ import { data } from './constant/data.js';
 
 const DefaultData = async () => {
     try {
-        await News.insertMany(data);
+        //await News.insertMany(data);
         console.log('Data imported Successfully');
         
     } catch (error) {
