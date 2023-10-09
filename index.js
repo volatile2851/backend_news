@@ -11,14 +11,14 @@ import DefaultData from './default.js'
 const app = express();
 dotenv.config();
 
-app.use(cors());
+app.use(cors({origin : 'http://localhost:3000/' , credentials : TRUE}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 app.use('/', Route);
 
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
-const PORT = 8000;
+const PORT = env.port || 8000;
 
 Connection(username, password);
 
